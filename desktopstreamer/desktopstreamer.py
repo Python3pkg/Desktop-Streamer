@@ -9,15 +9,15 @@ The external ``avconv`` and ``vlc`` commands are used for this.
 
 """
 
-from __future__ import absolute_import
-from __future__ import print_function
+
+
 
 import os
 import sys
 import time
 import shlex
 import json
-import Tkinter as tk
+import tkinter as tk
 
 from subprocess import PIPE, Popen, check_output, CalledProcessError
 from collections import OrderedDict
@@ -257,9 +257,9 @@ class DesktopStreamer(object):
     terminated = False
     while self.running_processes:
       if terminated:
-        map(lambda proc: proc.kill(), self.running_processes)
+        list(map(lambda proc: proc.kill(), self.running_processes))
       else:
-        map(lambda proc: proc.terminate(), self.running_processes)
+        list(map(lambda proc: proc.terminate(), self.running_processes))
         terminated = True
       time.sleep(seconds)  # give them some time...
 
@@ -269,7 +269,7 @@ class DesktopStreamer(object):
     Return a dictionary containing all settings.
 
     """
-    return {k: v for k, v in self.__dict__.items() if k in self.SETTINGS}
+    return {k: v for k, v in list(self.__dict__.items()) if k in self.SETTINGS}
 
   @property
   def cmd_avconv_as_string(self):

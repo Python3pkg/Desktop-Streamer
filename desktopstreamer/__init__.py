@@ -13,7 +13,7 @@ your desktop shell under the name *Desktop Streamer*.
 
 """
 
-from __future__ import absolute_import
+
 
 
 __all__ = [

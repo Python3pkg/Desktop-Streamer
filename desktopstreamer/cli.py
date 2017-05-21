@@ -5,8 +5,8 @@ A command line interface for :class:`desktopstreamer.DesktopStreamer`.
 
 """
 
-from __future__ import absolute_import
-from __future__ import print_function
+
+
 
 import sys
 import signal

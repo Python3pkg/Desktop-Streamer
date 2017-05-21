@@ -5,10 +5,10 @@ A GUI interface for :class:`desktopstreamer.DesktopStreamer`.
 
 """
 
-from __future__ import absolute_import
 
-import tkMessageBox
-import Tkinter as tk
+
+import tkinter.messagebox
+import tkinter as tk
 
 from . import DesktopStreamerError
 
@@ -61,7 +61,7 @@ class DSGui(tk.Frame):
         self.button['text'] = 'Stop Stream'
       except DesktopStreamerError as err:
         self.return_code = 1
-        tkMessageBox.showerror("ERROR", err)
+        tkinter.messagebox.showerror("ERROR", err)
         self.quit()
     else:
       self.streamer.stop()
